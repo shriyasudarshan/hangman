@@ -1,2 +1,2 @@
-# hangman
-a game
+# Hangman
+A game created using C Programming.

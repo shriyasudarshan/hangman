@@ -12,7 +12,8 @@
 #define MAX_TRIES 6
 
 // Struct to hold a word and its hint
-struct WordWithHint {
+struct WordWithHint 
+{
     char word[MAX_WORD_LENGTH];
     char hint[MAX_WORD_LENGTH];
 };
@@ -30,7 +31,8 @@ int main()
     // time
     srand(time(NULL));
     // Array of words with hints
-    struct WordWithHint wordList[] = {
+    struct WordWithHint wordList[] = 
+    {
         { "w3schools", "Computer coding" },
         { "elephant", "A large mammal with a trunk" },
         { "pizza", "A popular Italian dish" },
@@ -53,7 +55,8 @@ int main()
 
     int tries = 0;
 
-    while (tries < MAX_TRIES) {
+    while (tries < MAX_TRIES) 
+    {
         printf("\n");
         displayWord(guessedWord, guessedLetters);
         drawHangman(tries);
@@ -63,7 +66,8 @@ int main()
         scanf(" %c", &guess);
         guess = tolower(guess);
 
-        if (guessedLetters[guess - 'a']) {
+        if (guessedLetters[guess - 'a']) 
+        {
             printf("You've already guessed that letter. "
                    "Try again.\n");
             continue;
@@ -72,24 +76,29 @@ int main()
         guessedLetters[guess - 'a'] = true;
 
         bool found = false;
-        for (int i = 0; i < wordLength; i++) {
-            if (secretWord[i] == guess) {
+        for (int i = 0; i < wordLength; i++)
+        {
+            if (secretWord[i] == guess) 
+            {
                 found = true;
                 guessedWord[i] = guess;
             }
         }
 
-        if (found) {
+        if (found) 
+        {
             printf("Good guess!\n");
         }
-        else {
+        else 
+        {
             printf("Sorry, the letter '%c' is not in the "
                    "word.\n",
                    guess);
             tries++;
         }
 
-        if (strcmp(secretWord, guessedWord) == 0) {
+        if (strcmp(secretWord, guessedWord) == 0) 
+        {
             printf("\nCongratulations! You've guessed the "
                    "word: %s\n",
                    secretWord);

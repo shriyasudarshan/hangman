@@ -36,6 +36,7 @@ int main()
         { "needle", "What has an eye, but cannot see?" },
         { "Word", "Entry in a Dictionary"},  
         { "Fold", "What do origami artists do to a paper?"},
+        { "Worm", "Limbless prey for a bird"},
   
     };
 
